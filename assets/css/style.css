@@ -677,6 +677,23 @@ section .container {
   border: 2px solid #FFB521;
 }
 
+/* See more */
+.see-more-btn {
+  display: flex;
+  margin: 20px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.card {
+  background-color: transparent;
+}
+
+.card-body {
+  padding: 0;
+}
+
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
