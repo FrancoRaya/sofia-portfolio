@@ -946,6 +946,10 @@ section .container {
   overflow-y: auto;
 }
 
+.container {
+  max-width: 1250px;
+}
+
 .portfolio-details .container {
   padding-top: 20px;
   padding-bottom: 40px;
@@ -1002,6 +1006,11 @@ section .container {
 
 .portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #FFB521;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: auto;
 }
 
 /*--------------------------------------------------------------
