@@ -12,7 +12,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg.jpg") top right no-repeat;
+  background: #040404 url("../img/Portada-2.jpg") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -117,6 +117,12 @@ h6 {
 
 #header .social-links a:hover {
   background: #FFB521;
+}
+
+.header {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
 }
 
 @media (max-width: 992px) {
@@ -1169,6 +1175,17 @@ section .container {
 
 .contact .php-email-form button[type=submit]:hover {
   background: #FFD03A;
+}
+
+.cont-btn {
+  background-color: #FFB521 !important;
+  margin: 20px 0 0 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.cont-btn:hover {
+  background-color: #FFD03A !important;
 }
 
 @-webkit-keyframes animate-loading {

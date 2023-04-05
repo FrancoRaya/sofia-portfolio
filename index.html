@@ -33,7 +33,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="container">
+    <div class="container header">
 
       <h1>
         <a href="index.html">Sofía Roca Ferreyra</a>
@@ -58,6 +58,10 @@
         <a href="https://www.linkedin.com/in/sof%C3%ADa-roca-177a37115/" target="blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
 
+<!--       <p>
+        Developed by <a href="http://" target="blank">Franco Raya</a>
+      </p> -->
+
     </div>
   </header><!-- End Header -->
 
@@ -74,7 +78,7 @@
 
       <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="assets/img/me.jpg" class="img-fluid" alt="">
+          <img src="assets/img/Sofia.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
           <h3>Architect & Landscape Designer</h3>
@@ -1118,28 +1122,46 @@
         </div>
       </div>
 
-      <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+      <form id="form" method="post" role="form" class="php-email-form mt-4">
         <div class="row">
           <div class="col-md-6 form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            <input type="text" name="name" class="form-control" id="from_name" placeholder="Your Name" required>
           </div>
+
           <div class="col-md-6 form-group mt-3 mt-md-0">
             <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
           </div>
         </div>
+
         <div class="form-group mt-3">
-          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          <textarea id="message" class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
         </div>
-        <div class="form-group mt-3">
-          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-        </div>
-        <div class="my-3">
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Your message has been sent. Thank you!</div>
-        </div>
-        <div class="text-center"><button type="submit">Send Message</button></div>
+
+        <input type="submit" class="text-center cont-btn" id="button" value="Send Message">
       </form>
+
+      <script>
+        const btn = document.getElementById('button');
+
+        document.getElementById('form')
+        .addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          btn.value = 'Sending...';
+
+          const serviceID = 'default_service';
+          const templateID = 'template_jrrr1ij';
+
+          emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+              btn.value = 'Send Message';
+              alert('Message sent!');
+            }, (err) => {
+              btn.value = 'Send Message';
+              alert(JSON.stringify(err));
+            });
+        });
+      </script>
 
     </div>
   </section><!-- End Contact Section -->
@@ -1155,6 +1177,13 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    emailjs.init('user_8TqOqNni0TtnCMnxmWxQV')
+  </script>
 
 </body>
 </html>
