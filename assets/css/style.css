@@ -27,6 +27,13 @@ body::before {
   }
 }
 
+@media (max-width: 768px) {
+  body::before {
+    background: #040404 url("../img/Portada-2.jpg") top left no-repeat;
+    background-size: cover;
+  }
+}
+
 a {
   color: #FFB521;
   text-decoration: none;
@@ -143,6 +150,7 @@ h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 }
 
@@ -1023,7 +1031,12 @@ section .container {
   width: 100%;
   height: auto;
 }
+@media (max-width: 600px) {
+  .swiper-slide img {
+    width: 100%;
 
+  }
+}
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
